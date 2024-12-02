@@ -1,66 +1,24 @@
-## Foundry
+# Storage Contract 
+The *Storage.sol* contract allows users to store their favorite number.
+It also allows users to donate ether.
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
+## Contract Address: `0x1234`
 
-Foundry consists of:
+# Storage Contract UI
+1. Button for connecting to wallet
+2. Text box for entering favorite number
+3. ethers js
 
--   **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
--   **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
--   **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
--   **Chisel**: Fast, utilitarian, and verbose solidity REPL.
+## Requirments
+1. Allow user to store their favorite number
+2. Allow the user to donate ETH.
+3. Emit an event when a user stores their favoite number
+4. Emit an event when a user donates ETH.
+5. custom errors for transaction failure.
+6. Withdrawl funciton for contract owner.
 
-## Documentation
-
-https://book.getfoundry.sh/
-
-## Usage
-
-### Build
-
-```shell
-$ forge build
-```
-
-### Test
-
-```shell
-$ forge test
-```
-
-### Format
-
-```shell
-$ forge fmt
-```
-
-### Gas Snapshots
-
-```shell
-$ forge snapshot
-```
-
-### Anvil
-
-```shell
-$ anvil
-```
-
-### Deploy
-
-```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
-```
-
-### Cast
-
-```shell
-$ cast <subcommand>
-```
-
-### Help
-
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
-```
+### Deploy 
+1. Deploy script takes into account multiple networks: Anvil local test network, Sepolia Test Net, Base Sepolia Test Net
+   
+### Testing
+1. Fully test with 100% coverage
