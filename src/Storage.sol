@@ -100,10 +100,12 @@ contract Storage {
      */
     function withdrawBalance() external onlyOwner {
         uint256 amount = address(this).balance;
-        (bool success, ) = i_owner.call{value: amount}("");
-        require(success == true, WithdrawFailure());
+        if (amount < 0.001 ether) revert WithdrawFailure();
+        
+        (bool success, ) = i_owner.call{value: address(this).balance}("");
+        if (!success) revert WithdrawFailure();
 
-        // emit some event here
+        // emit event
         emit BalanceWithdrawn(amount);
     }
 
