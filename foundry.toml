@@ -2,5 +2,11 @@
 src = "src"
 out = "out"
 libs = ["lib"]
+fs_permissions = [{ access = "read-write", path = "./"}]
+
+[lint]
+exclude_lints = ["mixed-case-function", "mixed-case-variable", 
+                    "screaming-snake-case-immutable", "asm-keccak256", 
+                    "screaming-snake-case-const", "incorrect-shift", "pascal-case-struct"]
 
 # See more config options https://github.com/foundry-rs/foundry/blob/master/crates/config/README.md#all-options
